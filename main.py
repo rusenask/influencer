@@ -4,7 +4,8 @@ import social
 from flask import Flask, jsonify
 from datetime import datetime
 import time
-model = "qwen2.5"
+
+model = "qwen2.5:32b"
 port = 5000
 
 app = Flask(__name__)
