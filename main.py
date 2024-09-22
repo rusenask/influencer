@@ -6,6 +6,7 @@ from datetime import datetime
 import os
 
 model = "qwen2.5"
+port = 5000
 
 app = Flask(__name__)
 
@@ -41,5 +42,6 @@ def run_action():
         
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Starts server on port 5000
+    app.run(debug=True, port=port)
 
