@@ -42,6 +42,8 @@ def run_action():
     Respond with only the post, no additional commentary, no notes, no link"""
     
     prompt_start_time = time.time()
+    
+    print('Prompting the model to generate a post...')    
 
     # Feed that prompt to the LLM to get a response
     postContent = str(client.chat(model, prompt))
