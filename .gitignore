@@ -1,0 +1,6 @@
+.ollama
+bin
+log
+.pki
+__pycache__
+.idea
