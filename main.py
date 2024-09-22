@@ -5,11 +5,12 @@ from flask import Flask, jsonify
 from datetime import datetime
 import os
 
+model = "qwen2.5"
 
 app = Flask(__name__)
 
 @app.route('/action', methods=['POST'])
-def log_timestamp():
+def run_action():
     # Find some content
     pageURL = scraper.findArticle()
     print(pageURL)
@@ -28,7 +29,7 @@ def log_timestamp():
     print(prompt)
 
     # Feed that prompt to the LLM to get a response
-    postContent = str(client.chat("qwen2.5", prompt))
+    postContent = str(client.chat(model, prompt))
     print(postContent)
 
     # Post to our networks

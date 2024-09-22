@@ -9,7 +9,9 @@ def postLinkedIn(comment: str, url: str, title: str, description: str):
     linkedInToken = os.getenv("LINKEDIN_TOKEN")
 
     # If token is not set, nothing to do
-    
+    if not linkedInToken:
+        print("No LinkedIn token set, skipping post")
+        return
 
     # Need to call this to get the current user's linked-in user id
     me_response = restli_client.get(resource_path="/me", access_token=linkedInToken)
@@ -40,6 +42,12 @@ def postLinkedIn(comment: str, url: str, title: str, description: str):
     )
 
 def postTwitter(comment: str, url: str):
+    twitterToken = os.getenv("TWITTER_TOKEN")
+
+    # If token is not set, nothing to do
+    if not twitterToken:
+        print("No Twitter token set, skipping post")
+        return
 
     oauth = OAuth1Session(
         # "Consumer Keys" under "Keys and Tokens" in the developer console
