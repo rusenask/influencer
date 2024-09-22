@@ -5,7 +5,7 @@ from flask import Flask, jsonify
 from datetime import datetime
 import time
 
-model = "qwen2.5:32b"
+model = "phi3.5" # phi3.5
 port = 5000
 
 app = Flask(__name__)
@@ -51,8 +51,8 @@ def run_action():
     print(f"Time taken to prompt: {prompt_time:.2f} seconds")
 
     # Post to our networks
-    social.postLinkedIn(postContent, pageURL, title, description)
-    social.postTwitter(postContent, pageURL)
+    # social.postLinkedIn(postContent, pageURL, title, description)
+    # social.postTwitter(postContent, pageURL)
     
     # Return a JSON response with the title, description and content for the caller
     return jsonify({"title": title, "description": description, "content": content})
