@@ -8,6 +8,9 @@ def postLinkedIn(comment: str, url: str, title: str, description: str):
 
     linkedInToken = os.getenv("LINKEDIN_TOKEN")
 
+    # If token is not set, nothing to do
+    
+
     # Need to call this to get the current user's linked-in user id
     me_response = restli_client.get(resource_path="/me", access_token=linkedInToken)
     userURI = f"urn:li:person:{me_response.entity['id']}"
